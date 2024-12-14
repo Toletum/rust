@@ -41,19 +41,19 @@ fn main() -> Result<()> {
         println!("Persona: {:?}", persona?);
     }
 
-        let mut stmt_con_parametros = conn.prepare("SELECT id, nombre, edad FROM persona where edad = ?1")?;
-        let persona_iter_con_parametros = stmt_con_parametros.query_map(params![25], |row|{
-            Ok(Persona{
-                id: row.get(0)?,
-                nombre: row.get(1)?,
-                edad: row.get(2)?,
-            })
-        })?;
+    let mut stmt_con_parametros = conn.prepare("SELECT id, nombre, edad FROM persona where edad = ?1")?;
+    let persona_iter_con_parametros = stmt_con_parametros.query_map(params![25], |row|{
+        Ok(Persona{
+            id: row.get(0)?,
+            nombre: row.get(1)?,
+            edad: row.get(2)?,
+        })
+    })?;
 
-        println!("Personas con edad 25:");
-        for persona_con_parametros in persona_iter_con_parametros{
-            println!("Persona: {:?}", persona_con_parametros?);
-        }
+    println!("Personas con edad 25:");
+    for persona_con_parametros in persona_iter_con_parametros{
+        println!("Persona: {:?}", persona_con_parametros?);
+    }
 
     Ok(())
 }

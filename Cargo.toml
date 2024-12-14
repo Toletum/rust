@@ -3,3 +3,5 @@ members = [
     "sqlite",
     "hola_mundo"
 ]
+
+resolver = "2"
