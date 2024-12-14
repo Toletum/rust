@@ -1,0 +1,7 @@
+# Archivos binarios y ejecutables
+/target/
+/Cargo.lock
+/Cargo.bak
+
+
+*.db

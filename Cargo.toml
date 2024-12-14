@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "sqlite",
+    "hola_mundo"
+]
